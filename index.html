@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Basketball Shooting 2D</title>
+
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="game-wrap">
+
+        <!-- Judul dan skor -->
+        <header class="topbar">
+            <h1>Basketball Shooting</h1>
+
+            <div class="score-card">
+                <div class="score-label">SKOR</div>
+                <div id="score">0</div>
+            </div>
+        </header>
+
+        <!-- Area permainan -->
+        <section class="game-container">
+            <canvas
+                id="game"
+                width="900"
+                height="500"
+                aria-label="Area permainan basket 2D"
+            ></canvas>
+            
+<div id="startScreen" class="start-screen">
+    <div class="start-card">
+        <div class="start-ball">🏀</div>
+        <h2>Basketball Shooting</h2>
+        <p>Siap untuk mencetak poin?</p>
+        <button id="startBtn" type="button">
+            Mulai Bermain
+        </button>
+    </div>
+</div>
+
+        </section>
+
+        <!-- Petunjuk dan tombol kontrol -->
+        <section class="controls">
+
+            <div class="hint">
+                <strong>Kontrol permainan</strong>
+                <p>
+                    A / D : Gerakkan karakter<br>
+    W / S : Atur sudut tembakan<br>
+    Spasi : Lompat<br>
+    Klik kiri / tombol Tembak : Tembak bola
+                </p>
+            </div>
+
+            <div class="buttons">
+                <button id="shootBtn" type="button">
+                    Tembak 🏀
+                </button>
+
+                <button id="resetBtn" type="button">
+                    ↻ Reset
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Pesan status permainan -->
+        <div id="status" role="status" aria-live="polite">
+            Atur posisi dan sudut, lalu tembak bola!
+        </div>
+
+    </main>
+
+    <!-- Menghubungkan file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

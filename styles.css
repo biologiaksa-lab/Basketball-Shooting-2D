@@ -1,0 +1,291 @@
+
+/* =================================
+   1. PENGATURAN DASAR
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px 12px;
+    background: #eef1f4;
+    color: #202833;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Pembungkus seluruh game */
+.game-wrap {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* =================================
+   2. JUDUL DAN SKOR
+================================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Kotak skor */
+.score-card {
+    min-width: 95px;
+    padding: 8px 18px;
+    background: #ffffff;
+    border: 1px solid #d9dee5;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(32, 40, 51, 0.04);
+}
+
+.score-label {
+    color: #66717f;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#score {
+    margin-top: 3px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* =================================
+   3. AREA PERMAINAN
+================================= */
+
+.game-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #f9fafb;
+    border: 1px solid #d9dee5;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(32, 40, 51, 0.05);
+}
+
+#game {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #f9fafb;
+    touch-action: manipulation;
+}
+
+/* =================================
+   4. PETUNJUK DAN KONTROL
+================================= */
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.hint {
+    flex: 1 1 240px;
+    color: #586473;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.hint strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #202833;
+    font-size: 14px;
+}
+
+.hint p {
+    margin: 0;
+}
+
+/* Kelompok tombol */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Gaya dasar tombol */
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+        background-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+/* Tombol tembak */
+#shootBtn {
+    background: #f28b27;
+    color: #ffffff;
+}
+
+#shootBtn:hover {
+    background: #dc7415;
+}
+
+#shootBtn:active {
+    transform: scale(0.97);
+}
+
+/* Tombol reset */
+#resetBtn {
+    background: #202833;
+    color: #ffffff;
+}
+
+#resetBtn:hover {
+    background: #374151;
+}
+
+#resetBtn:active {
+    transform: scale(0.97);
+}
+
+/* Fokus keyboard untuk aksesibilitas */
+button:focus-visible {
+    outline: 3px solid #3276c3;
+    outline-offset: 3px;
+}
+
+/* =================================
+   5. STATUS PERMAINAN
+================================= */
+
+#status {
+    min-height: 22px;
+    margin-top: 14px;
+    color: #586473;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* =================================
+   6. TAMPILAN MOBILE
+================================= */
+
+@media (max-width: 600px) {
+    body {
+        padding: 14px 10px;
+    }
+
+    .topbar {
+        gap: 8px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .score-card {
+        min-width: 75px;
+        padding: 7px 12px;
+    }
+
+    #score {
+        font-size: 24px;
+    }
+
+    .controls {
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hint {
+        flex-basis: 100%;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    button {
+        flex: 1;
+        padding: 12px 10px;
+    }
+}
+
+/* Layar awal permainan */
+.start-screen {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(238, 241, 244, 0.94);
+}
+
+.start-screen[hidden] {
+    display: none;
+}
+
+.start-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 28px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #d9dee5;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(32, 40, 51, 0.10);
+}
+
+.start-ball {
+    margin-bottom: 10px;
+    font-size: 48px;
+}
+
+.start-card h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #202833;
+}
+
+.start-card p {
+    margin: 0 0 22px;
+    color: #66717f;
+    font-size: 14px;
+}
+
+#startBtn {
+    width: 100%;
+    padding: 14px 18px;
+    background: #f28b27;
+    color: #ffffff;
+}
+
+#startBtn:hover {
+    background: #dc7415;
+}
+
+#startBtn:active {
+    transform: scale(0.98);
+}
